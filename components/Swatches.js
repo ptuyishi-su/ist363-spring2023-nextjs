@@ -1,4 +1,4 @@
-import styles from './swatches.module.scsss'
+import styles from './swatches.module.scss'
 const Swatches = ({
     changeHander,
     data

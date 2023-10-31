@@ -15,7 +15,7 @@ const Homepage = () => {
       label="Download now" 
       type="secondary"
     />
-    <Button label="Learn More" />
+    <Button label="Learn About" />
 
   </div>
 }

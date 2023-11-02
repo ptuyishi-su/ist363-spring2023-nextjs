@@ -1,6 +1,8 @@
+import Layout from "../components/Layouts";
+
 const AboutPage = ()=> {
-    return <div>
+    return <Layout>
     <h1>Contact Page</h1>
-</div>
+</Layout>
 }
 export default AboutPage;

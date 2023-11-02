@@ -1,11 +1,10 @@
 import Button from "../components/Buttons";
 import CarColorPicker from '../components/CarColorPicker';
+import Layout from "../components/Layouts";
+
 const Homepage = () => {
-  return <div>
+  return <Layout>
     <CarColorPicker/>
-
-
-
     <h1>Homepage</h1>
     <Button 
       label="Register now"
@@ -17,6 +16,6 @@ const Homepage = () => {
     />
     <Button label="Learn About" />
 
-  </div>
+  </Layout>
 }
 export default Homepage;

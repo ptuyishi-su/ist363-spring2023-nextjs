@@ -1,6 +1,6 @@
 import Button from "../components/Buttons";
 import CarColorPicker from '../components/CarColorPicker';
-import Layout from "../components/Layouts";
+import Layout from "../components/Layout";
 
 const Homepage = () => {
   return <Layout>

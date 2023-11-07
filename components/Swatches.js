@@ -9,8 +9,9 @@ const Swatches = ({
     data 
 }) => {
     return <ul className={styles.swatch__list}>
-        {data.map((color) => {
+        {data.map((color, index) => {
              return <li 
+                key={index}
                  className={styles.swatch__item}
                  style={{backgroundColor: color.hex}}
                  onClick={() => {

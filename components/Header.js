@@ -19,6 +19,11 @@ const Header= ()=>{
                         Contact
                     </Link>
                 </li>
+                <li>
+                    <Link href="/vehicles">
+                        Vehicles
+                    </Link>
+                </li>
             </ul>
         </nav>
         </header>

@@ -3,10 +3,8 @@ import {getVehicleBySlug, getAllVehicleSlugs} from '../../lib/api';
 
 //Water fall
 //1. getStaticPaths
-
 export async function getStaticPaths() {
-    const pathsArr= getAllVehicleSlugs();
-
+    const vehicles= getAllVehicleSlugs();
     const paths=pathsArr.map((slug) => {
         return {
             params:{

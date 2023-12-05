@@ -3,7 +3,7 @@ module.exports = {
       remotePatterns: [
         {
           protocol: 'http',
-          hostname: 'copy-paste-the-url-of-your-local-wp-site-here-without-the-http-and-without-a-trailing-slash'
+          hostname: 'localhost:10012'
         },
         {
           protocol: 'https',

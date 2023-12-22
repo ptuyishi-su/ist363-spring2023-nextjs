@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 
 
 import styles from './grid.module.scss';
+import Heading from './Heading';
 
 const Grid = ({ items }) => {
     const sectionVariants = {
@@ -49,7 +50,7 @@ const Grid = ({ items }) => {
                                 height={trimLevels[0].images.thumbnail.node.mediaDetails.height}
                             />
                         }
-                        <h3>{title}</h3>
+                        <Heading level={3}>{title}</Heading>
                         <p>
                             <Link href={`/vehicles/${slug}`}>Learn more</Link>
                         </p>

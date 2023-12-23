@@ -6,8 +6,8 @@ import Grid from '../../components/Grid';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
-import Heading from '../../components/Heading'
-import Paragraph from './Paragraph';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
 
 import { getAllVehicles, getVehicleTypes } from '../../lib/api';
 

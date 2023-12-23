@@ -1,10 +1,11 @@
-@import '../sass/abstracts/mixins';
+@import '../sass/abstracts/mixins'; 
+
 .paragraph{
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.2;
     color: black;
-
+    
     @include mixins.breakpoint(tablet){
         font-size: 1.05rem;
     }

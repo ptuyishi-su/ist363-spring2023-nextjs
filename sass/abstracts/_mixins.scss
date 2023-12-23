@@ -58,7 +58,7 @@
 
 }
 
-@mixin fontColor(){
+@mixin fontColors(){
 	$colors: black, green,white, pink,;
 	
 	@each $color in $colors {

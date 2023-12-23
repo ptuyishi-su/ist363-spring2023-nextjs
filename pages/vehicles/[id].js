@@ -1,57 +1,50 @@
-import CallToAction from '../../components/CallToAction';
-import ColorPicker from '../../components/ColorPicker';
-import Container from '../../components/Container';
 import Image from 'next/image';
+import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import Showcase from '../../components/Showcase';
-import TrimPicker from '../../components/TrimPicker';
+import { getVehicleBySlug, getAllVehicleSlugs } from '../../lib/api';
 
-import { getAllVehicleSlugs, getVehicleDataBySlug } from '../../lib/api'
-
+// WATERFALL
+// 1. getStaticPaths
 export async function getStaticPaths() {
     const vehicles = await getAllVehicleSlugs();
-    //console.log({vehicles});
     const paths = vehicles.map((vehicle) => {
+        const { slug } = vehicle.node;
         return {
             params: {
-                id: vehicle.node.slug
+                id: slug
             }
         }
-    })
-    
+    });
     return {
-      paths: paths,
-      fallback: false, // can also be true or 'blocking'
+        paths,
+        fallback: false
     }
-  }
-  
-  // `getStaticPaths` requires using `getStaticProps`
-  export async function getStaticProps({params}) {
-    const { id } = params;
-    //console.log({id});
-    const vehicleData = await getVehicleDataBySlug(id);
+}
+// 2. getStaticProps
+export async function getStaticProps({ params }) {
+    const vehicleData = await getVehicleBySlug(params.id);
     return {
-      // Passed to the page component as props
-      props: { 
-        vehicleData
-      },
+        props : {
+            vehicleData
+        }
     }
-  }
-  
-  export default function SingleVehiclePage({ vehicleData }) {
-    const { title, featuredImage, vehicleInformation } = vehicleData;
-    const { showcase, trimLevels, vehicleColors  } = vehicleInformation;
-    //console.log({trimLevels});
+}
+// 3. page component
+const SingleVehiclePage = ({ vehicleData }) => {
+    const { title, slug, featuredImage, vehicleInformation} = vehicleData;
+    const {headline}=vehicleInformation.showcase;
     return <Layout>
-        <Showcase 
-          subheadline={`Subaru ${title}`}
-          headline={showcase.headline ? showcase.headline : null}
-          backgroundImage={featuredImage ? featuredImage.node : null}
+        <Showcase
+            subtitle={title}
+            title={headline}
+            featuredImage={featuredImage} 
         />
-        <Container>
-          <TrimPicker trimLevels={trimLevels} />
-          <ColorPicker vehicleColors={vehicleColors} />
-        </Container>
-        <CallToAction vehicleName={title} />
+
+        <div id="main-content">
+          <TrimPicker />
+        </div>
+
     </Layout>
 }
+export default SingleVehiclePage;

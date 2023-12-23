@@ -1,8 +1,13 @@
-import styles from './header.module.scss'
-import ButtonUi from './ButtonUi'
-import Container from './Container'
-import Row from "./Rows"
-import { useState } from 'react'
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+
+import styles from './header.module.scss';
+import ButtonUi from './ButtonUi';
+import Container from './Container';
+import Row from "./Rows";
+import Logo from "./Logo";
+import Nav from './Nav';
 
 const Header= ()=>{
      const [isMobileNavopen, setIsMobileNavOpen]=useState(false)
@@ -12,9 +17,15 @@ const Header= ()=>{
                     <Logo/>
                     <Nav.Desktop/>
                     <ButtonUi icon="menu" clickHandler={()=>{
-                         
-                    }} />
-                    {isMobileNavopen &&<Nav.Mobile />}
+                         setIsMobileNavOpen(true);
+
+                         }} 
+                    />
+                    <AnimatePresence>
+                         {isMobileNavopen &&<Nav.Mobile closeHandler={()=>{
+                              setIsMobileNavOpen(false);
+                         }} />}
+                    </AnimatePresence>
                </Row>
 
           </Container>

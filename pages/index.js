@@ -1,4 +1,4 @@
-import Button from "../components/Buttons";
+import Button from "../components/Button";
 import CarColorPicker from '../components/CarColorPicker';
 import Layout from "../components/Layout";
 

@@ -5,14 +5,18 @@ let cx = classnames.bind(styles);
 
 const Button = ({
     clickHandler, 
-    label="Default", 
-    type="secondary" 
+    children,
+    type
 }) => {
     let buttonClasses = cx({
         btn: true,
         primary: type === "primary",
         secondary: type === "secondary"
     });
-    return <button onClick={clickHandler} className={buttonClasses}>{label}</button>
+    return <button 
+    onClick={clickHandler} 
+    className={buttonClasses}>
+        {children}
+    </button>
 }
 export default Button

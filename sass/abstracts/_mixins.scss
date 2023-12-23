@@ -104,9 +104,11 @@
 }
 
 @mixin justifyContent(){
-	$values:flex-start, flex-end, center,space-evenly,space-between,space-around;
+	$values:flex-start, flex-end, center,space-evenly,space-between,
+	space-around;
+
 	@each $value in $values{
-		&.jusify-content-#{$alue}{
+		&.jusify-content-#{$value}{
 			justify-content: $value;
 		}
 	}

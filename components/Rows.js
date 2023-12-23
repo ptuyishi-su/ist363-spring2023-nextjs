@@ -9,7 +9,7 @@ const Row=({children, justifyContent})=>{
         row: true,
         [`justify-content-${justifyContent}`]: justifyContent
     });
-    return <div className={StyleSheet.row}>{children}</div>
+    return <div className={styles.row}>{children}</div>
 }
 
 export default Row;

@@ -3,5 +3,5 @@
 .row{
     display: flex;
     align-items: center;
-    @include mixins.justifyContents();
+    @include mixins.justifyContent();
 }

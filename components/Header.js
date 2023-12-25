@@ -9,7 +9,8 @@ import Row from "./Rows";
 import Logo from "./Logo";
 import Nav from './Nav';
 
-const Header= ()=>{
+const Header = ()=> {
+     //state variable
      const [isMobileNavopen, setIsMobileNavOpen]=useState(false)
      return<header className={styles.header}>
           <Container>
@@ -26,8 +27,12 @@ const Header= ()=>{
                     />
                     <AnimatePresence>
                          {isMobileNavopen &&<Nav.Mobile closeHandler={()=>{
+                               setIsMobileNavOpen(false);
+                         }}/> }
+                         {/* {isMobileNavopen &&<Nav.Mobile closeHandler=
+                         {()=>{
                               setIsMobileNavOpen(false);
-                         }} />}
+                         }} />} */}
                     </AnimatePresence>
                </Row>
 

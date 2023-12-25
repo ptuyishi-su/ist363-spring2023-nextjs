@@ -13,7 +13,7 @@ import {getDesktopNavItems, getMobileNavItems} from '../lib/nav'
 
 
 const Nav=()=>{
-    return <nav className={Styles.nav}>nav goes here</nav>
+    return <nav className={styles.nav}>nav goes here</nav>
 }
 const Desktop = ()=>{
     const navItems= getDesktopNavItems();
@@ -73,7 +73,8 @@ const Mobile = (closeHandler) => {
             exit="closed"
             variants={mobileNavVariants}
         >
-            <ButtonUi icon="close" clickHandler={closeHandler} />
+            <ButtonUi icon="close" clickHandler={closeHandler.closeHandler} />
+
             <motion.ul className={styles.nav__list} variants={listVariants}>
                 {navItems.map((navItem, index) => {
                     const { label, slug } = navItem;

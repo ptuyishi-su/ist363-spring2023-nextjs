@@ -1,5 +1,5 @@
-import Image from "next/image";
 import classNames from "classnames/bind";
+import Image from "next/image";
 
 import styles from "./btnui.module.scss"
 
@@ -8,7 +8,8 @@ const cx=classNames.bind(styles);
 const ButtonUi=({clickHandler,icon})=>{
     const btnClasses = cx({
         btnui:true,
-        close: icon ==='close'
+        close: icon ==='close',
+        menu:icon === 'menu'
     })
     return <button 
         className={btnClasses}

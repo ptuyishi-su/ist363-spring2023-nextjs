@@ -1,4 +1,5 @@
-@use '../sass/abstracts/mixins';
+// @use '../sass/abstracts/mixins';
+@use '../sass/abstracts/mixins.scss';
 
 .heading {
     font-family: Arial, Helvetica, sans-serif;
@@ -30,11 +31,13 @@
         @include mixins.breakpoint(laptop){
             font-size: 1.75rem;
         }
+        @include  mixins.fontColors();
+        @include  mixins.textAligns();
+        @include  mixins.margin();
     
     }
-    @include  mixins.fontColors();
-    @include  mixins.textAligns();
-    @include  mixins.margin();
+
+  
 
 
     

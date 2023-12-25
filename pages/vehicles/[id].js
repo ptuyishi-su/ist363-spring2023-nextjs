@@ -1,6 +1,8 @@
+import ColorPicker from '../../components/ColorPicker'
 import Container from '../../components/Container';
-import Image from 'next/image';
+import Head from 'next/head';
 import Heading from '../../components/Heading';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import Showcase from '../../components/Showcase';
 import TrimPicker from '../../components/Trimpicker';
@@ -40,8 +42,11 @@ export async function getStaticProps({ params }) {
 const SingleVehiclePage = ({ vehicleData, drivingLocations }) => {
     const { title, slug, featuredImage, vehicleInformation} = vehicleData;
     const {headline}=vehicleInformation.showcase;
-    const {trimLevels}=vehicleInformation;
+    const {trimLevels, vehicleColors}=vehicleInformation;
     return <Layout>
+        <Head>
+            <title>{title}</title>
+        </Head>
         <Showcase
             subtitle={title}
             title={headline}
@@ -53,6 +58,9 @@ const SingleVehiclePage = ({ vehicleData, drivingLocations }) => {
             <TrimPicker 
               trims={trimLevels} 
               locations={drivingLocations}
+            />
+            <ColorPicker 
+                colors={vehicleColors}
             />
           </Container>
         </div>

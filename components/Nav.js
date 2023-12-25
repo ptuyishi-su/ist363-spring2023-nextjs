@@ -22,7 +22,7 @@ const Desktop = ()=>{
             {navItems.map((navItem, index) =>{
                 const {label, slug}=navItem;
                 return <li key={index} className={styles.nav__list__items}>
-                    <Link href={slug}>
+                    <Link href={`/${slug}`}>
                         {label}
                     </Link>
                 </li>

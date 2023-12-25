@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-
+import Link from 'next/link';
 import styles from './header.module.scss';
 import ButtonUi from './ButtonUi';
 import Container from './Container';
@@ -14,11 +14,14 @@ const Header= ()=>{
      return<header className={styles.header}>
           <Container>
                <Row justifyContent="space-between">
-                    <Logo/>
+                    <Link href="/">
+                         <Logo/>
+                    </Link >
                     <Nav.Desktop/>
-                    <ButtonUi icon="menu" clickHandler={()=>{
+                    <ButtonUi 
+                         icon="menu" 
+                         clickHandler={()=>{
                          setIsMobileNavOpen(true);
-
                          }} 
                     />
                     <AnimatePresence>

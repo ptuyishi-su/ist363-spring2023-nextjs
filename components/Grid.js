@@ -5,6 +5,16 @@ import { motion } from "framer-motion"
 
 import styles from './grid.module.scss';
 import Heading from './Heading';
+import Paragraph from './Paragraph';
+
+const convertPriceToFomatetedString =(price)=>{
+    let PriceArray=price.toString().split('');
+
+    for (let i=PriceArray.length - 3; 1>0; i -=3) {
+        PriceArray.splice(i,0,',');
+    }
+    return '$' + PriceArray.join ('');
+}
 
 const Grid = ({ items }) => {
     const sectionVariants = {
@@ -41,6 +51,7 @@ const Grid = ({ items }) => {
                     return <motion.article 
                         key={index}
                         variants={articleVariants}
+                        className={styles.grid__item}
                     >
                         {trimLevels && trimLevels[0].images.thumbnail && 
                             <Image 
@@ -50,10 +61,21 @@ const Grid = ({ items }) => {
                                 height={trimLevels[0].images.thumbnail.node.mediaDetails.height}
                             />
                         }
-                        <Heading level={3}>{title}</Heading>
-                        <p>
+                        <Heading 
+                            level={3}
+                            color={black}
+                        >
+                            {title}
+                        </Heading>
+                        {trimLevels[0].msrp &&
+                            <Paragraph>
+                                Starting at {convertPriceToFomatetedString(trimLevels[0].msrp)}
+                            </Paragraph>
+                        }
+
+                        <Paragraph>
                             <Link href={`/vehicles/${slug}`}>Learn more</Link>
-                        </p>
+                        </Paragraph>
                     </motion.article>
                 })}
     </motion.section>

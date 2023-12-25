@@ -1,7 +1,7 @@
-import Container from "../components/Container"
-import Heading from "../components/Heading"
-import Layout from "../components/Layout"
-import Paragraph from "../components/Paragraph"
+import Container from "../../components/Container"
+import Heading from "../../components/Heading"
+import Layout from "../../components/Layout"
+import Paragraph from "../../components/Paragraph"
 
 const ShoppingToolsPage =()=>{
     return <Layout>

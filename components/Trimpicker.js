@@ -1,6 +1,6 @@
 import Heading from './Heading';
 import Label from './Label';
-import Label from './Select';
+import Select from './Select';
 import FormGroup from './FormGroup';
 import Image from 'next/image';
 

@@ -1,0 +1,9 @@
+@use '../sass/abstracts/mixins';
+@use '../sass/abstracts/vars';
+
+.footer{
+    background-color: green;
+    &__list {
+        display: flex;
+        gap: 1rem;
+        align-items: center;}}

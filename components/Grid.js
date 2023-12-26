@@ -1,5 +1,5 @@
 //core imports
-import { motion } from "framer-motion"
+import { filterProps, motion } from "framer-motion"
 
 //custom components
 import Image from 'next/image';
@@ -17,6 +17,9 @@ const convertPriceToFomatetedString =(price)=>{
     }
     return '$' + PriceArray.join ('');
 }
+
+
+
 const Grid = ({ items }) => {
     const sectionVariants = {
         closed: { 
@@ -68,6 +71,8 @@ const Grid = ({ items }) => {
                 >
                     {title}
                 </Heading>
+                <Grid items={filteredVehicles} />
+
                 {trimLevels[0].msrp &&
                     <Paragraph>
                         Starting at {convertPriceToFomatetedString(trimLevels[0].msrp)}

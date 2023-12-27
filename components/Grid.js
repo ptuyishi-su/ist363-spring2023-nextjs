@@ -9,13 +9,13 @@ import Paragraph from './Paragraph';
 
 //styles
 import styles from './grid.module.scss';
-const convertPriceToFomatetedString =(price)=>{
-    let PriceArray=price.toString().split('');
+const convertPriceToFormattedString = (price) => {
+    let priceArray = price.toString().split('');
 
-    for (let i=PriceArray.length - 3; 1>0; i -=3) {
-        PriceArray.splice(i,0,',');
+    for (let i = priceArray.length - 3; i > 0; i -= 3) {
+        priceArray.splice(i,0,',');
     }
-    return '$' + PriceArray.join ('');
+    return '$' + priceArray.join ('');
 }
 
 
@@ -75,7 +75,7 @@ const Grid = ({ items }) => {
 
                 {trimLevels[0].msrp &&
                     <Paragraph>
-                        Starting at {convertPriceToFomatetedString(trimLevels[0].msrp)}
+                        Starting at {convertPriceToFormattedString(trimLevels[0].msrp)}
                     </Paragraph>
                 }
 
